@@ -4,4 +4,13 @@ from selenium.common.exceptions import NoSuchElementException, WebDriverExceptio
 import getpass
 import pyperclip
 
-print(r)
+print("")
+
+options = Options()
+options.headless = True
+
+try:
+    print('Hello World')
+
+except:
+    print('Come back to late')
