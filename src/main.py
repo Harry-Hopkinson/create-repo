@@ -10,7 +10,11 @@ options = Options()
 options.headless = True
 
 try:
-    print('Hello World')
+    browser = webdriver.Chrome(
+        options=options, executable_path="C:/selenium/chromedriver.exe") # do your installation path
 
-except:
-    print('Come back to late')
+except WebDriverException:
+    browser = webdriver.Firefox(
+        options=option, executable_path="C:/selenium/geckodriver.exe")
+
+browser.get("https://github.com/login")
