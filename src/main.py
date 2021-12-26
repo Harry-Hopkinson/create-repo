@@ -26,13 +26,11 @@ try:
     browser = webdriver.Chrome(
         options=options, executable_path="C:/selenium/chromedriver.exe")
 except WebDriverException:
-    browser = webdriver.Firefox(
-        options=options, executable_path="C:/selenium/geckodriver.exe")
+    print("Install Google Chrome for create-repo to work...")
 
 browser.get("https://github.com/login")
 
 try:
-    # Getting the forms
     username = browser.find_element_by_name("login")
     password = browser.find_element_by_name("password")
     sign_in = browser.find_element_by_name("commit")
@@ -70,7 +68,6 @@ try:
 
         print("Doing Magic 🪄")
 
-        # Clicks create repository.
         create_repo = browser.find_elements_by_css_selector(
             "button.btn:nth-child(12)")[0]
         create_repo.click()
