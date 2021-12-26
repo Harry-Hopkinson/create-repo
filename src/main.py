@@ -27,6 +27,9 @@ try:
         options=options, executable_path="C:/selenium/chromedriver.exe")
 except WebDriverException:
     print("Install Google Chrome for create-repo to work...")
+    print("Trying Firefox 🦊")
+    browser = webdriver.Firefox(
+        options=options, executable_path="C:/selenium/geckodriver.exe")
 
 browser.get("https://github.com/login")
 
